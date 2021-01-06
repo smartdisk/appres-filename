@@ -1,6 +1,6 @@
 {
   "name": "@appres/filename",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "File name related functions",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,10 @@
   "keywords": [
     "filename"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartdisk/appres-filename.git"
+  },
   "homepage": "https://appres.org",
   "author": "APPRES.ORG",
   "license": "MIT",
