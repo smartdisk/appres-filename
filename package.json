@@ -1,0 +1,18 @@
+{
+  "name": "@appres/filename",
+  "version": "0.0.0",
+  "description": "File name related functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "filename"
+  ],
+  "homepage": "https://appres.org",
+  "author": "APPRES.ORG",
+  "license": "MIT",
+  "dependencies": {
+    "truncate-utf8-bytes": "^1.0.2"
+  }
+}
