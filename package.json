@@ -1,8 +1,9 @@
 {
   "name": "@appres/filename",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "File name related functions",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

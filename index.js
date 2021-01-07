@@ -2,12 +2,19 @@
 
 const _truncate = require("truncate-utf8-bytes");
 
-const _illegalRe = /[\/\?<>\\:\*\|"]/g;
-const _controlRe = /[\x00-\x1f\x80-\x9f]/g;
-const _reservedRe = /^\.+$/;
-const _windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
-const _windowsTrailingRe = /[\. ]+$/;
-function _validate(filename, replace){
+Object.defineProperty(exports, "__esModule", { value: true });
+var FileName = /** @class */ (function () {
+
+  const _illegalRe = /[\/\?<>\\:\*\|"]/g;
+  const _controlRe = /[\x00-\x1f\x80-\x9f]/g;
+  const _reservedRe = /^\.+$/;
+  const _windowsReservedRe = /^(con|prn|aux|nul|com[0-9]|lpt[0-9])(\..*)?$/i;
+  const _windowsTrailingRe = /[\. ]+$/;
+  
+  function FileName() {
+  }
+  
+  function _valid(filename, replace){
     if (typeof filename !== 'string') {
       throw new Error('Not string.');
     }
@@ -21,19 +28,28 @@ function _validate(filename, replace){
         valid = valid.replace("..", ".");
     }
     return _truncate(valid, 255);
-}
-class _FileName { }
-_FileName.prototype.validate = (filename, options) => {
+  }
+
+  FileName.prototype.valid = function(filename, options){
     let lastsp = filename.lastIndexOf("/");
     if(lastsp>=0) filename = filename.substring(lastsp);
     let replace = (options && options.replace) || '';
-    let output = _validate(filename, replace);
+    let output = _valid(filename, replace);
     if (replace === '') {
       return output;
     }
-    return _validate(output, '');  
-}
-const FileName = new _FileName();
-module.exports = FileName;
+    return _valid(output, '');  
+  };
 
-// console.log(FileName.validate("../../.some_file_name.txt."));
+  FileName.fileName = new FileName();
+  FileName.valid = function(filename, options) {
+    return this.fileName.valid(filename, options);
+  };
+
+  return FileName;
+}());
+
+module.exports = FileName;
+module.exports.FileName = FileName;
+
+// console.log(FileName.valid("../../.some_file_name.txt."));
