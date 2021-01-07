@@ -17,7 +17,7 @@ import { FileName } from '@appres/filename';
 
 ## Usage
 ```
-let filename = FileName.validate("some_file_name.txt");
+let filename = FileName.valid("some_file_name.txt");
 
 ```
 
