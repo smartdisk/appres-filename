@@ -2,7 +2,7 @@
 
 # Description
 ## Remove unusable characters from the file name. In other words, it only returns the available strings.
-<br/><br/>
+<br/>
 
 # Install
 ```
