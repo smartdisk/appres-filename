@@ -21,8 +21,8 @@ import { FileName } from '@appres/filename';
 
 ## Usage
 ```
-let filename = FileName.valid("some_file_name.txt");
-let filename = FileName.valid("*?some_...file_name.txt.");
+let filename1 = FileName.valid("some_file_name.txt");
+let filename2 = FileName.valid("../../*?some_?*file_name.txt.");
 
 Return will be same to "some_file_name.txt"
 

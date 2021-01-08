@@ -52,4 +52,10 @@ var FileName = /** @class */ (function () {
 module.exports = FileName;
 module.exports.FileName = FileName;
 
-// console.log(FileName.valid("../../.some_file_name.txt."));
+/*
+// Samples
+let filename1 = FileName.valid("some_file_name.txt");
+let filename2 = FileName.valid("../../*?some_?*file_name.txt.");
+console.log("filename1=" + filename1);
+console.log("filename2=" + filename2);
+*/
